@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/jemereny.github.io/static/css/main.c411ba2f.css",
-    "main.js": "/jemereny.github.io/static/js/main.9eafd525.js",
-    "static/js/787.d4aba7ab.chunk.js": "/jemereny.github.io/static/js/787.d4aba7ab.chunk.js",
-    "index.html": "/jemereny.github.io/index.html",
-    "main.c411ba2f.css.map": "/jemereny.github.io/static/css/main.c411ba2f.css.map",
-    "main.9eafd525.js.map": "/jemereny.github.io/static/js/main.9eafd525.js.map",
-    "787.d4aba7ab.chunk.js.map": "/jemereny.github.io/static/js/787.d4aba7ab.chunk.js.map"
+    "main.css": "/static/css/main.c411ba2f.css",
+    "main.js": "/static/js/main.64bf110a.js",
+    "static/js/787.d4aba7ab.chunk.js": "/static/js/787.d4aba7ab.chunk.js",
+    "index.html": "/index.html",
+    "main.c411ba2f.css.map": "/static/css/main.c411ba2f.css.map",
+    "main.64bf110a.js.map": "/static/js/main.64bf110a.js.map",
+    "787.d4aba7ab.chunk.js.map": "/static/js/787.d4aba7ab.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c411ba2f.css",
-    "static/js/main.9eafd525.js"
+    "static/js/main.64bf110a.js"
   ]
 }
