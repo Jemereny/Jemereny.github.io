@@ -1,0 +1,37 @@
+div.Experience {
+  display: flex;
+  margin-left: 10%;
+  margin-right: 10%;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+div.CompanyTenure {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+div.Company {
+  flex: 1;
+  text-align: left;
+  font-size: 24px;
+ }
+ 
+ div.Tenure {
+  flex: 1;
+  text-align: right;
+  font-size: 24px;
+ }
+
+ div.Summary {
+  flex: 1;
+  text-align: left;
+  font-size: 18px;
+ }
+ 
+ div.Impact {
+  flex: 1;
+  text-align: left;
+  font-size: 18px;
+ }
