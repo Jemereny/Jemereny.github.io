@@ -20,8 +20,9 @@ export const profile: Profile = {
   email: 'chanjem@gmail.com',
   location: 'Singapore',
   linkedin: 'https://www.linkedin.com/in/chanjem/',
-  summary:
-    'Software engineer with 3 years of backend development experience with a focus on backend software architecture, development and building cloud-native applications. Skilled with using Typescript (NodeJS) for backend development, architecting serverless solutions in AWS and experienced in building CI/CD pipelines. Always seeking to make an impact.',
+  summary: `Software engineer with ${
+    new Date().getFullYear() - 2020
+  } years of backend development experience with a focus on backend software architecture, development and building cloud-native applications. Skilled with using Typescript (NodeJS) for backend development, architecting serverless solutions in AWS and experienced in building CI/CD pipelines. Always seeking to make an impact.`,
 };
 
 export const experiences: Experience[] = [
@@ -30,8 +31,12 @@ export const experiences: Experience[] = [
     title: 'Senior Software Engineer',
     startDate: new Date(2023, 8),
     summary:
-      'Building and maintaining cloud-native applications on AWS to support Dyson app and internal toolings.',
-    impacts: [],
+      'Building and maintaining cloud-native applications on AWS to support Dyson app and internal toolings, utilizing technologies such as ECS, GraphQL, DynamoDB with a focus in .NET and Typescript',
+    impacts: [
+      'Created several proof-of-concept services designed to deliver content to mobile applications either through GraphQL or Rest APIs',
+      'Created internal tools to decouple app assets from its release, decreasing the time to release and update assets, and also reducing the size and load-times of the MyDyson app',
+      'Created an internal service to leverage on existing services to deliver daily active user metrics',
+    ],
   },
   {
     company: 'Connected Freight Pte Ltd',
