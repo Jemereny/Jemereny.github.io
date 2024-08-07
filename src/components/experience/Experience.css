@@ -1,7 +1,4 @@
 div.Experience {
-  display: flex;
-  margin-left: 10%;
-  margin-right: 10%;
   justify-content: space-between;
   flex-direction: column;
 }
@@ -16,23 +13,53 @@ div.Company {
   flex: 1;
   text-align: left;
   font-size: 24px;
- }
+}
  
- div.Tenure {
+div.Tenure {
   flex: 1;
   text-align: right;
   font-size: 24px;
- }
+}
 
- div.Summary {
+div.Summary {
   flex: 1;
   text-align: left;
   margin-top: 5px;
   font-size: 18px;
- }
+ }  
  
- div.Impact {
+div.Impact {
   flex: 1;
   text-align: left;
   font-size: 18px;
- }
+}
+
+div.Tabs {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin: auto;
+}
+
+div.Tabs input {
+  display: none;
+}
+
+div.Tabs label {
+  color: cadetblue;
+  text-align: left;
+  text-wrap: nowrap;
+}
+
+div.Tabs div :hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+div.Tabs input[type="radio"]:checked + label {
+  text-decoration: underline;
+}
+
+div.Tabs div {
+  text-decoration:dashed;
+}

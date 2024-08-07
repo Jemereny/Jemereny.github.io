@@ -1,18 +1,21 @@
 div.Profile {
-  margin-left: 10%;
-  margin-right: 10%;
+  flex-direction: column;
 }
 
-h1.Profile {
+div.Profile * {
+  text-align: left;
+}
+
+div.Profile h1 {
   font-size: 32px;
 }
 
-h3.Profile {
+div.Profile h3 {
   font-size: 16px;
   text-align: start;
 }
 
-h4.Profile {
+div.Profile h4 {
   font-size: 20px;
   line-height: 0px;
 

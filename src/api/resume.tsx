@@ -3,7 +3,7 @@ export interface Profile {
   email: string;
   location: string;
   linkedin: string;
-  summary: string;
+  summary: string | JSX.Element;
 }
 
 export interface Experience {
@@ -16,13 +16,18 @@ export interface Experience {
 }
 
 export const profile: Profile = {
-  name: 'Jeremy Chan',
+  name: 'Jeremy',
   email: 'chanjem@gmail.com',
   location: 'Singapore',
   linkedin: 'https://www.linkedin.com/in/chanjem/',
-  summary: `Software engineer with ${
-    new Date().getFullYear() - 2020
-  } years of backend development experience with a focus on backend software architecture, development and building cloud-native applications. Skilled with using Typescript (NodeJS) for backend development, architecting serverless solutions in AWS and experienced in building CI/CD pipelines. Always seeking to make an impact.`,
+  summary: (
+    <>
+      Software engineer with {new Date().getFullYear() - 2020} years of backend development experience with a
+      focus on backend software architecture, development and building cloud-native applications. Skilled with
+      using Typescript (NodeJS) for backend development, architecting solutions in AWS and experienced in
+      building CI/CD pipelines. Always seeking to make an impact.
+    </>
+  ),
 };
 
 export const experiences: Experience[] = [
@@ -33,13 +38,13 @@ export const experiences: Experience[] = [
     summary:
       'Building and maintaining cloud-native applications on AWS to support Dyson app and internal toolings, utilizing technologies such as ECS, GraphQL, DynamoDB with a focus in .NET and Typescript',
     impacts: [
-      'Created several proof-of-concept services designed to deliver content to mobile applications either through GraphQL or Rest APIs',
-      'Created internal tools to decouple app assets from its release, decreasing the time to release and update assets, and also reducing the size and load-times of the MyDyson app',
+      'Built internal tools and services to provide assets management and distribution for MyDyson app, enabling efficient updates, testing and publishing for operational effectiveness',
       'Created an internal service to leverage on existing services to deliver daily active user metrics',
+      'Built an internal tool to enable ML team to effectively upload and perform processing of training data for models',
     ],
   },
   {
-    company: 'Connected Freight Pte Ltd',
+    company: 'Connected Freight',
     title: 'Software Engineer II',
     startDate: new Date(2020, 3),
     endDate: new Date(2023, 6),
@@ -56,7 +61,7 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    company: 'Gojek',
+    company: 'Gojek (Intern)',
     title: 'Devops Intern',
     startDate: new Date(2019, 7),
     endDate: new Date(2019, 11),
@@ -68,7 +73,7 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    company: 'Acronis',
+    company: 'Acronis (Intern)',
     title: 'Research Developer Intern',
     startDate: new Date(2019, 4),
     endDate: new Date(2019, 5),
@@ -83,7 +88,7 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    company: 'TinyMOS',
+    company: 'TinyMOS (Intern)',
     title: 'Software Deverloper Intern',
     startDate: new Date(2018, 4),
     endDate: new Date(2019, 4),
