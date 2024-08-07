@@ -23,6 +23,7 @@ export const Experience = (props: Props) => {
                   : 'Present'}
               </div>
             </div>
+            <div className='CompanyTenure'>[{experience.title}]</div>
             {experience.summary ? (
               <div className='Summary' key={`Summary-${index}`}>
                 {experience.summary}
