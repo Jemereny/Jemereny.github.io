@@ -1,0 +1,45 @@
+---
+import Button from './Button.astro'
+import { cn } from '@/utils'
+const { title, languages, apis, databases, skills, technologies, class: className } = Astro.props
+---
+
+<div class={cn('flex flex-col gap-y-2 md:flex-row md:gap-x-5 md:gap-y-0', className)}>
+	<div class='flex w-4/5 flex-row flex-wrap gap-x-4 gap-y-2'>
+		{
+			languages
+				? languages.map((language: string[]) => (
+						<Button as='button' title={language} style='pill' class='bg-cyan-200' />
+					))
+				: null
+		}
+		{
+			apis
+				? apis.map((api: string[]) => (
+						<Button as='button' title={api} style='pill' class='bg-red-200' />
+					))
+				: null
+		}
+		{
+			databases
+				? databases.map((database: string[]) => (
+						<Button as='button' title={database} style='pill' class='bg-indigo-200' />
+					))
+				: null
+		}
+		{
+			skills
+				? skills.map((skill: string[]) => (
+						<Button as='button' title={skill} style='pill' class='bg-amber-400' />
+					))
+				: null
+		}
+		{
+			technologies
+				? technologies.map((technology: string[]) => (
+						<Button as='button' title={technology} style='pill' class='bg-yellow-200' />
+					))
+				: null
+		}
+	</div>
+</div>

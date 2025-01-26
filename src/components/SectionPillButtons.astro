@@ -1,0 +1,14 @@
+---
+import SkillPillButtons from './SkillPillButtons.astro'
+import { cn } from '@/utils'
+const { title, languages, apis, databases, skills, technologies, class: className } = Astro.props
+---
+
+<SkillPillButtons
+	languages={languages}
+	apis={apis}
+	databases={databases}
+	skills={skills}
+	technologies={technologies}
+	class='print:hidden'
+/>

@@ -5,7 +5,7 @@ import Card from '../components/Card.astro'
 import ProjectCard from '../components/ProjectCard.astro'
 import Label from '../components/Label.astro'
 import SkillLayout from '../components/SkillLayout.astro'
-import SmallSkillLayout from '../components/SmallSkillLayout.astro'
+import SectionPillButtons from '../components/SectionPillButtons.astro'
 
 import { Image } from 'astro:assets'
 import astro from '../assets/about-astro.png'
@@ -13,10 +13,10 @@ import astro from '../assets/about-astro.png'
 import { getAllPosts, sortMDByDate } from '@/utils'
 
 const languages = ['Typescript', 'Javascript', '.NET/C#', 'Python']
-const api = ['REST API', 'GraphQL']
-const database = ['DynamoDB', 'PostgreSQL']
+const apis = ['REST API', 'GraphQL']
+const databases = ['DynamoDB', 'PostgreSQL']
 const skills = ['Object-Oriented Programming', 'Functional Programming', 'SOLID']
-const technologies = ['Amazon Web Services/AWS', 'Docker']
+const technologies = ['Amazon Web Services/AWS', 'Docker', 'React']
 
 const MAX_POSTS = 10
 const allPosts = await getAllPosts()
@@ -24,10 +24,10 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 ---
 
 <PageLayout meta={{ title: 'Home' }}>
-	<div class='flex w-full flex-col gap-y-10'>
+	<div class='flex w-full flex-col gap-y-10 print:gap-y-3'>
 		<section class='flex flex-col items-center gap-y-7'>
 			<div class='flex flex-col items-center gap-y-4'>
-				<h1 class='text-3xl font-bold'>Jeremy Chan</h1>
+				<h1 class='text-3xl font-bold print:text-2xl'>Jeremy Chan</h1>
 				<div class='flex flex-wrap justify-center gap-x-7 gap-y-3'>
 					<Label title='Dyson'>
 						<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='h-5 w-5' slot='icon'
@@ -51,6 +51,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 					</Label>
 					<Label
 						title='Connect on Linkedin'
+						class='print:hidden'
 						as='a'
 						href='https://www.linkedin.com/in/chanjem/'
 						target='_blank'
@@ -66,7 +67,13 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 							></path></svg
 						>
 					</Label>
-					<Label title='Github' as='a' href='https://github.com/Jemereny/' target='_blank'>
+					<Label
+						title='Github'
+						as='a'
+						href='https://github.com/Jemereny/'
+						class='print:hidden'
+						target='_blank'
+					>
 						<svg
 							viewBox='0 0 100 100'
 							slot='icon'
@@ -119,7 +126,11 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 						MyDyson app to support key business functions.
 					</li>
 				</ul>
-				<SmallSkillLayout skills={['Typescript', 'Javascript', '.NET/C#', 'REST API', 'GraphQL', 'Amazon Web Services/AWS', 'React']} />
+				<SectionPillButtons
+					languages={['Typescript', 'Javascript', '.NET/C#']}
+					apis={apis}
+					technologies={technologies}
+				/>
 			</Card>
 			<Card
 				heading='Connected Freight'
@@ -153,7 +164,11 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 						services to perform role-based authorization.
 					</li>
 				</ul>
-				<SmallSkillLayout skills={['Typescript', 'Javascript', 'Python', 'REST API', 'GraphQL', 'Amazon Web Services/AWS', 'React']} />
+				<SectionPillButtons
+					languages={['Typescript', 'Javascript', 'Python']}
+					apis={apis}
+					technologies={technologies}
+				/>
 			</Card>
 			<Card
 				heading='Connected Freight'
@@ -174,7 +189,11 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 					</li>
 					<li>Supported major production issues and ensured services have low to zero downtime.</li>
 				</ul>
-				<SmallSkillLayout skills={['Typescript', 'Javascript', 'Python', 'REST API', 'GraphQL', 'Amazon Web Services/AWS', 'React']} />
+				<SectionPillButtons
+					languages={['Typescript', 'Javascript', 'Python']}
+					apis={apis}
+					technologies={technologies}
+				/>
 			</Card>
 			<Card
 				heading='Gojek'
@@ -188,7 +207,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 					Developing, deploying and integrating team workflows into slack bots onto Google Cloud
 					Platform using Python to reduce repetitive workload of the team by 80%.
 				</p>
-				<SmallSkillLayout skills={['Python']} />
+				<SectionPillButtons languages={['Python']} />
 			</Card>
 			<Card
 				heading='Acronis'
@@ -202,7 +221,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 					Researching and documenting usage of different libraries and technologies to enable the
 					team to build ElasticSearch plugins for future usages in the search team.
 				</p>
-				<SmallSkillLayout skills={['Java', 'Go']} />
+				<SectionPillButtons languages={['Java', 'Go']} />
 			</Card>
 			<Card
 				heading='TinyMOS'
@@ -216,7 +235,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 					Developed camera software and its companion mobile app; Including a noise-reduction
 					calibration system and auto-exposure system for the camera.
 				</p>
-				<SmallSkillLayout skills={['Java']} />
+				<SectionPillButtons languages={['Java']} />
 			</Card>
 		</Section>
 
@@ -239,7 +258,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 			/>
 		</Section>
 
-		<Section title='Projects'>
+		<Section title='Projects' class='print:hidden'>
 			<div class='flex flex-col gap-y-3 sm:flex-row sm:gap-x-3 sm:gap-y-0'>
 				<ProjectCard
 					href='https://github.com/Jemereny/Axependiture-BE'
@@ -253,11 +272,13 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 		</Section>
 
 		<Section title='Skills'>
-			<SkillLayout title='Languages' skills={languages} />
-			<SkillLayout title='API Design & Development' skills={api} />
-			<SkillLayout title='Database Technologies' skills={database} />
-			<SkillLayout title='Skills' skills={skills} />
-			<SkillLayout title='Technologies' skills={technologies} />
+			<SkillLayout
+				languages={languages}
+				apis={apis}
+				databases={databases}
+				skills={skills}
+				technologies={technologies}
+			/>
 		</Section>
 	</div>
 </PageLayout>
